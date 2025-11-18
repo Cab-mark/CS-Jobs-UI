@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function GovukHeader() {
   return (
     <header className="govuk-header" data-module="govuk-header">

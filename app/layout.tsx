@@ -2,13 +2,20 @@ import type { Metadata } from "next";
 import "./govuk.scss";
 import GovukInit from "./GovukInit";
 import GovukHeader from "./components/GovukHeader";
+import ServiceNavigation from "./components/ServiceNavigation";
 import GovukFooter from "./components/GovukFooter";
 
 
 export const metadata: Metadata = {
-  title: "My GOV.UK service",
-  description: "Prototype using Next.js + GOVUK Frontent",
+  title: "Civil Service Jobs",
+  description: "next.js prototype for Civil Service Jobs.",
 };
+
+const navLinks = [
+  { href: '/', text: 'Home', active: true },
+  { href: '/jobs', text: 'View all jobs', active: false },
+  { href: '/Cymraeg', text: 'Cymraeg', active: false },
+];
 
 export default function RootLayout({
   children,
@@ -20,6 +27,8 @@ export default function RootLayout({
       <body className="govuk-template__body">
 
         <GovukHeader />
+
+        <ServiceNavigation links={navLinks} />
 
           <div className="govuk-width-container">
             <main className="govuk-main-wrapper" id="main-content" role="main">
