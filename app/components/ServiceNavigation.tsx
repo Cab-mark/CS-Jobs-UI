@@ -10,7 +10,6 @@ import { usePathname } from 'next/navigation'; // Hook to get the current route
 interface NavLink {
   href: string;
   text: string;
-  // 'active' is not needed in the input, as we calculate it dynamically
 }
 
 interface ServiceNavigationProps {
