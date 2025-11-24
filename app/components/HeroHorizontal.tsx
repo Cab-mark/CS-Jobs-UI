@@ -1,4 +1,19 @@
-export default function HeroHorizontal() {
+"use client";
+
+import { useSearchParams } from 'next/navigation';
+
+/**
+ * @component
+ * @description A component to display content based on search parameters.
+ */
+const HeroHorizontal: React.FC = () => {
+  // ✅ CORRECT: The hook is called inside the body of a function component (HeroHorizontal)
+  const searchParams = useSearchParams();
+
+  // Logic using the hook's result is also inside the component
+  const keyword = searchParams.get('q') || '';
+  const location = searchParams.get('l') || '';
+  
   return (
     <div className="govuk-hero--light">
 
@@ -15,6 +30,7 @@ export default function HeroHorizontal() {
                 id="q"
                 name="q"
                 type="text"
+                defaultValue={keyword}
                 />
             </div>
             <div className="govuk-form-group govuk-grid-column-one-third">
@@ -26,6 +42,7 @@ export default function HeroHorizontal() {
                 id="l"
                 name="l"
                 type="text"
+                defaultValue={location}
                 />
             </div>
             <div className="govuk-form-group govuk-grid-column-one-third">
@@ -43,4 +60,6 @@ export default function HeroHorizontal() {
       </div>
     </div>
   );
-}
+};
+
+export default HeroHorizontal;

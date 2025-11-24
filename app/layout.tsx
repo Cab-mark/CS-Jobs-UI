@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import "./govuk.scss";
+import Script from "next/script";
+import "./globals.scss";
 import GovukInit from "./GovukInit";
 import Skip from "./components/Skip";
 import GovukHeader from "./components/GovukHeader";
@@ -32,7 +33,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="govuk-template govuk-template--rebranded">
-      <body className="govuk-template__body">
+      <body className="govuk-template__body govuk-frontend-supported">
+        <GovukInit />
         <Skip />
         <GovukHeader />
 
@@ -41,7 +43,7 @@ export default function RootLayout({
         <PhaseBanner />
 
             <main className="govuk-main-wrapper" id="main-content" role="main">
-                <GovukInit>{children}</GovukInit>         
+                {children}      
             </main>
 
         <GovukFooter 
