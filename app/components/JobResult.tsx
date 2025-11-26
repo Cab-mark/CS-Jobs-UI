@@ -9,13 +9,18 @@ export default function JobResult({
         {jobs.map((job) => (
           <li key={job.id} className="govuk-!-margin-bottom-6">
             <h2 className="govuk-heading-m">
-                <Link className="govuk-link" href={`/job/${job.id}`}>
+                <Link className="govuk-link govuk-link--no-visited-state" href={`/job/${job.id}`}>
                     {job.title}
                 </Link>
             </h2>
-            <p className="govuk-body-s-govuk-!-margin-bottom-1">
+            <p className="govuk-body-s govuk-!-margin-bottom-1">
               {job.organisation} · {job.location}
             </p>
+            {job.assignmentType && (
+              <p className="govuk-body-s govuk-!-margin-bottom-1">
+                <strong>Contract type:</strong> {job.assignmentType}
+              </p>
+            )}
                {job.salary && (
               <p className="govuk-body-s govuk-!-margin-bottom-1">
                 <strong>Salary:</strong> {job.salary}

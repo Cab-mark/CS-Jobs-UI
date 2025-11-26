@@ -1,0 +1,7 @@
+.filter-mobile { display: block; }
+.filter-desktop { display: none; }
+
+@media (min-width: 769px) {
+	.filter-mobile { display: none; }
+	.filter-desktop { display: block; }
+}
