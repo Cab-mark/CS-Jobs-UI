@@ -32,7 +32,7 @@ function renderTextWithBullets(blob: string, keyPrefix: string = "") {
 export default function JobAdvert({ job }: { job: Job }) {
   return (
     <>
-      <h2 className="govuk-heading-l">About the job</h2>
+      <h2 id="about-the-job" className="govuk-heading-l">About the job</h2>
       {job.summary && (
         <>
           <h3 className="govuk-heading-m">Summary</h3>
@@ -41,15 +41,15 @@ export default function JobAdvert({ job }: { job: Job }) {
       )}
       <h3 className="govuk-heading-m">Description</h3>
       {renderTextWithBullets(job.description, "desc")}
-      <h2 className="govuk-heading-l">What we are looking for</h2>
+      <h2 id="what-we-are-looking-for" className="govuk-heading-l">What we are looking for</h2>
       {renderTextWithBullets(job.personalSpec, "personalSpec")}
        {job.benefits && (
       <>
-      <h2 className="govuk-heading-l">Benefits</h2>
+      <h2 id="benefits" className="govuk-heading-l">Benefits</h2>
       {renderTextWithBullets(job.benefits, "benefits")}
       </>
        )}
-      <h2 className="govuk-heading-l">Before you apply</h2>
+      <h2 id="before-you-apply" className="govuk-heading-l">Before you apply</h2>
       <p className="govuk-body">You must read the following information before applying for this job.</p>
       <div className="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
       <div className="govuk-accordion__section">
