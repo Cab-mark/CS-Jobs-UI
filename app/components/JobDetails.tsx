@@ -7,6 +7,10 @@ export default function JobDetails({ job }: { job: Job }) {
       <h1 className="govuk-heading-xl">{job.title}</h1>
       <dl className="govuk-summary-list">
         <div className="govuk-summary-list__row">
+          <dt className="govuk-summary-list__key">Job reference</dt>
+          <dd className="govuk-summary-list__value">{job.id}</dd>
+        </div>
+        <div className="govuk-summary-list__row">
           <dt className="govuk-summary-list__key">Location</dt>
           <dd className="govuk-summary-list__value">{job.location}</dd>
         </div>
@@ -39,6 +43,17 @@ export default function JobDetails({ job }: { job: Job }) {
           </div>
         )}
       </dl>
+      {job.applyUrl && (
+        <a
+          href={job.applyUrl}
+          className="govuk-button"
+          target="_blank"
+          role="button"
+          rel="noopener noreferrer"
+        >
+          Apply on advertiser's site
+        </a>
+      )}
     </>
   );
 }

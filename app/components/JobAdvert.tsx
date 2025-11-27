@@ -49,6 +49,69 @@ export default function JobAdvert({ job }: { job: Job }) {
       {renderTextWithBullets(job.benefits, "benefits")}
       </>
        )}
+      <h2 className="govuk-heading-l">Before you apply</h2>
+      <p className="govuk-body">You must read the following information before applying for this job.</p>
+      <div className="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div className="govuk-accordion__section">
+        <div className="govuk-accordion__section-header">
+          <h3 className="govuk-accordion__section-heading">
+            <span className="govuk-accordion__section-button" id="accordion-default-heading-1">
+              How we will assess you
+            </span>
+          </h3>
+        </div>
+        <div id="accordion-default-content-1" className="govuk-accordion__section-content">
+          <p className="govuk-body">This is the content for Writing well for the web.</p>
+        </div>
+      </div>
+      <div className="govuk-accordion__section">
+        <div className="govuk-accordion__section-header">
+          <h3 className="govuk-accordion__section-heading">
+            <span className="govuk-accordion__section-button" id="accordion-default-heading-2">
+              Reasonable adjustments
+            </span>
+          </h3>
+        </div>
+        <div id="accordion-default-content-2" className="govuk-accordion__section-content">
+          <p className="govuk-body">This is the content for Writing well for specialists.</p>
+        </div>
+      </div>
+      <div className="govuk-accordion__section">
+        <div className="govuk-accordion__section-header">
+          <h3 className="govuk-accordion__section-heading">
+            <span className="govuk-accordion__section-button" id="accordion-default-heading-3">
+              Nationality requirements
+            </span>
+          </h3>
+        </div>
+        <div id="accordion-default-content-3" className="govuk-accordion__section-content">
+          <p className="govuk-body">This is the content for Know your audience.</p>
+        </div>
+      </div>
+      <div className="govuk-accordion__section">
+        <div className="govuk-accordion__section-header">
+          <h3 className="govuk-accordion__section-heading">
+            <span className="govuk-accordion__section-button" id="accordion-default-heading-4">
+              Eligibility checks
+            </span>
+          </h3>
+        </div>
+        <div id="accordion-default-content-4" className="govuk-accordion__section-content">
+          <p className="govuk-body">This is the content for Eligibility checks.</p>
+        </div>
+      </div>
+    </div>
+    {job.applyUrl && (
+        <a
+          href={job.applyUrl}
+          className="govuk-button"
+          target="_blank"
+          role="button"
+          rel="noopener noreferrer"
+        >
+          Apply on advertiser's site
+        </a>
+      )}
     </>
   );
 }  
