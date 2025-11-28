@@ -30,10 +30,10 @@ export default async function JobAdvertPage({ params }: JobAdvertProps) {
       </div>
       <div className="govuk-grid-column-one-quarter">
         <h3 className="govuk-heading-s">Contents</h3>
-        <a href="#about-the-job" className="govuk-link">About the job</a><br />
-        <a href="#what-we-are-looking-for" className="govuk-link">What we are looking for</a><br />
-        <a href="#benefits" className="govuk-link">Benefits</a><br />
-        <a href="#before-you-apply" className="govuk-link">Before you apply</a>
+        <a href="#about-the-job" className="govuk-link govuk-body">About the job</a><br />
+        <a href="#what-we-are-looking-for" className="govuk-link govuk-body">What we are looking for</a><br />
+        <a href="#contacts" className="govuk-link govuk-body">Contact us</a><br />
+        <a href="#before-you-apply" className="govuk-link govuk-body">Before you apply</a>
       </div>
       <div className="govuk-grid-column-three-quarters">
         <JobAdvert job={job as Job} />

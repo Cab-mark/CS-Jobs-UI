@@ -49,33 +49,48 @@ export default function JobAdvert({ job }: { job: Job }) {
       {renderTextWithBullets(job.benefits, "benefits")}
       </>
        )}
+
+          <h2 id="contacts" className="govuk-heading-l">Contacts us</h2>
+       { job.contactName &&(
+          <p className="govuk-body">Name: {job.contactName}</p>
+      )}  
+
+       { job.contactEmail &&(
+          <p className="govuk-body">Email: {job.contactEmail}</p>
+      )}
+
+          <p className="govuk-body">Recruitment team: {job.recruitmentEmail}</p>
+
       <h2 id="before-you-apply" className="govuk-heading-l">Before you apply</h2>
       <p className="govuk-body">You must read the following information before applying for this job.</p>
       <div className="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      {job.applyDetail && (
       <div className="govuk-accordion__section">
         <div className="govuk-accordion__section-header">
           <h3 className="govuk-accordion__section-heading">
             <span className="govuk-accordion__section-button" id="accordion-default-heading-1">
-              How we will assess you
+              Selection process
             </span>
           </h3>
         </div>
         <div id="accordion-default-content-1" className="govuk-accordion__section-content">
-          <p className="govuk-body">This is the content for Writing well for the web.</p>
+          {renderTextWithBullets(job.applyDetail || "", "applyDetail") }
         </div>
       </div>
+      )}
       <div className="govuk-accordion__section">
         <div className="govuk-accordion__section-header">
           <h3 className="govuk-accordion__section-heading">
             <span className="govuk-accordion__section-button" id="accordion-default-heading-2">
-              Reasonable adjustments
+              Diversity and inclusion
             </span>
           </h3>
         </div>
         <div id="accordion-default-content-2" className="govuk-accordion__section-content">
-          <p className="govuk-body">This is the content for Writing well for specialists.</p>
+          <p className="govuk-body">This is the content for diversity and inclusion.</p>
         </div>
       </div>
+      {job.nationalityRequirement && (
       <div className="govuk-accordion__section">
         <div className="govuk-accordion__section-header">
           <h3 className="govuk-accordion__section-heading">
@@ -85,9 +100,10 @@ export default function JobAdvert({ job }: { job: Job }) {
           </h3>
         </div>
         <div id="accordion-default-content-3" className="govuk-accordion__section-content">
-          <p className="govuk-body">This is the content for Know your audience.</p>
+          {renderTextWithBullets(job.nationalityRequirement || "", "nationalityRequirement")}
         </div>
       </div>
+      )}
       <div className="govuk-accordion__section">
         <div className="govuk-accordion__section-header">
           <h3 className="govuk-accordion__section-heading">
