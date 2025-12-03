@@ -287,8 +287,30 @@ const jobs: Job[] = [
 }
 ]
 
+export interface JobSearchResponse {
+  results: Job[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+  query: string | null;
+  appliedFilters: string | null;
+}
+
 export function getJobs(): Job[] {
   return jobs;
+}
+
+export function getJobSearchResponse(): JobSearchResponse {
+  return {
+    results: jobs,
+    total: jobs.length,
+    page: 1,
+    pageSize: 10,
+    totalPages: Math.ceil(jobs.length / 10),
+    query: null,
+    appliedFilters: null
+  };
 }
 
 export function getJobById(id: string): Job | undefined {
