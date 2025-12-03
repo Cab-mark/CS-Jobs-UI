@@ -10,7 +10,8 @@ export default function NotFound() {
       <p className="govuk-body">If you typed the web address, check it is correct.</p>
       <p className="govuk-body">If you pasted the web address, check you copied the entire address.</p>
       <p className="govuk-body">
-        If the web address is correct or you selected a link or button, you can use the links in the header to find what you need.
+        If the web address is correct or you selected a link or button,{' '}
+        <a href="/" className="govuk-link">go to the homepage</a> to find what you need.
       </p>
     </div>
   );
