@@ -71,14 +71,36 @@ export default function JobResult({ jobs }: { jobs: Job[] }) {
               </p>
             )}
                {job.salary && (
-              <p className="govuk-body-s govuk-!-margin-bottom-1">
-                <strong>Salary:</strong> {job.salary}
-              </p>
-            )}
+  <p className="govuk-body-s govuk-!-margin-bottom-1">
+    <strong>Salary:</strong> {
+      (() => {
+        const s = job.salary;
+        let symbol = s.currencySymbol || '';
+        let range = s.minimum ? (symbol ? symbol : '') + s.minimum.toLocaleString() : '';
+        if (s.maximum) {
+          range += ' - ' + (symbol ? symbol : '') + s.maximum.toLocaleString();
+        }
+        // Only show currency ISO if no symbol
+        let currency = !symbol && s.currency ? ` ${s.currency}` : '';
+        return `${range}${currency}`;
+      })()
+    }
+  </p>
+)}
             {/* Closing date */}
             {job.closingDate && (
               <p className="govuk-hint govuk-!-margin-bottom-2">
-                Closing date: {job.closingDate}
+                Closing date: {
+                  job.closingDate instanceof Date
+                    ? job.closingDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+                    : (() => {
+                        // Try to parse string to Date
+                        const d = new Date(job.closingDate);
+                        return isNaN(d.getTime())
+                          ? job.closingDate
+                          : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                      })()
+                }
               </p>
             )}
           </li>

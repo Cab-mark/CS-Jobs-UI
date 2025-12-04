@@ -50,9 +50,34 @@ export default function JobDetails({ job }: { job: Job }) {
         {job.salary && (
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Salary</dt>
-            <dd className="govuk-summary-list__value">{job.salary}</dd>
+            <dd className="govuk-summary-list__value">
+                {(() => {
+                  const s = job.salary;
+                  const symbol = s.currencySymbol || '';
+                  let range = s.minimum ? (symbol ? symbol : '') + s.minimum.toLocaleString() : '';
+                  if (s.maximum) {
+                    range += ' - ' + (symbol ? symbol : '') + s.maximum.toLocaleString();
+                  }
+                  // Only show currency ISO if no symbol
+                  let currency = !symbol && s.currency ? ` ${s.currency}` : '';
+                  return `${range}${currency}`;
+                })()}
+            </dd>
           </div>
         )}
+          {job.salary && job.salary.salaryDetails && (
+            <div className="govuk-summary-list__row">
+              <dt className="govuk-summary-list__key govuk-visually-hidden">Salary details</dt>
+              <dd className="govuk-summary-list__value">
+                {job.salary.salaryDetails.split(/\r?\n/).map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 ? <br /> : null}
+                  </span>
+                ))}
+              </dd>
+            </div>
+          )}
         <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Contract type</dt>
             <dd className="govuk-summary-list__value">{job.assignmentType}</dd>
@@ -72,13 +97,24 @@ export default function JobDetails({ job }: { job: Job }) {
         {job.closingDate && (
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Closing date</dt>
-            <dd className="govuk-summary-list__value">{job.closingDate}</dd>
+            <dd className="govuk-summary-list__value">
+              {
+                job.closingDate instanceof Date
+                  ? job.closingDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+                  : (() => {
+                      const d = new Date(job.closingDate);
+                      return isNaN(d.getTime())
+                        ? job.closingDate
+                        : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                    })()
+              }
+            </dd>
           </div>
         )}
       </dl>
       {job.applyUrl && (
         <a
-          href={job.applyUrl}
+          href={job.applyUrl.toString()}
           className="govuk-button"
           target="_blank"
           role="button"

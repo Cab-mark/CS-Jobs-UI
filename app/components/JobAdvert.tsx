@@ -176,7 +176,7 @@ export default function JobAdvert({ job }: { job: Job }) {
     </div>
     {job.applyUrl && (
         <a
-          href={job.applyUrl}
+          href={typeof job.applyUrl === 'string' ? job.applyUrl : job.applyUrl.toString()}
           className="govuk-button"
           target="_blank"
           role="button"

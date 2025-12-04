@@ -22,45 +22,122 @@ export interface fixedLocations {
   fullAddressSearch?: string;
 }
 
+export enum Approach {
+  Internal = "Internal",
+  AcrossGovernment = "Across Government",
+  External = "External"
+}
+
+export enum Assignments {
+  Apprentice = "Apprentice",
+  FixedTermAppointment = "Fixed Term Appointment (FTA)",
+  Loan = "Loan",
+  Secondment = "Secondment",
+  Permanent = "Permanent"
+}
+
+export enum Grade {
+  scs4 = "Senior Civil Service - Permanent Secretary",
+  scs3 = "Senior Civil Service - Director General (PB3)",
+  scs2 = "Senior Civil Service - Director (PB2)",
+  scs1 = "Senior Civil Service - Deputy Director (PB1/1A)",
+  grade6 = "Grade 6 Equivalent",
+  grade7 = "Grade 7 Equivalent",
+  seo = "Senior Executive Officer (SEO) Equivalent",
+  heo = "Higher Executive Officer (HEO) Equivalent",
+  eo = "Executive Officer (EO) Equivalent",
+  ao = "Administrative Officer (AO) Equivalent",
+  aa = "Administrative Assistant (AA) Equivalent"
+}
+
+export enum Profession {
+  Actuary = "Actuary",
+  Commercial = "Commercial",
+  Communications = "Communications",
+  CorporateFinance = "Corporate Finance",
+  CounterFraud = "Counter Fraud",
+  DigitalAndData =  "Digital and Data",
+  Economics = "Economics",
+  Finance = "Finance",
+  Geography = "Geography",
+  HumanResources = "Human Resources",
+  IntelligenceAnalysis = "Intelligence Analysis",
+  InternalAudit = "Internal Audit",
+  InternationalTrade = "International Trade",
+  KnowledgeAndInformationManagement = "Knowledge and Information Management",
+  Legal = "Legal",
+  Clinical = "Clinical",
+  OccupationalPsychology = "Occupational Psychology",
+  OperationalDelivery = "Operational Delivery",
+  OperationalResearch = "Operational Research",
+  Planning = "Planning",
+  PlanningInspection = "Planning Inspection",
+  Policy = "Policy",
+  ProjectDelivery = "Project Delivery",
+  Property = "Property",
+  RiskManagement = "Risk Management",
+  ScienceAndEngineering = "Science and Engineering",
+  Security = "Security",
+  SocialResearch = "Social Research",
+  Statistics = "Statistics",
+  Tax = "Tax",
+  Veterinary = "Veterinary", 
+}
+
+export enum DCStatus {
+  Committed = "Committed",
+  Employer = "Disability Confident Employer",
+  Leader = "Disability Confident Leader"
+}
+
 export interface overseasLocations {
   countryName: string;
   countryCode: string;
   locationDisplay?: string;
 }
 
+export interface Salary {
+  minimum: number;
+  maximum?: number;
+  currency: string;
+  currencySymbol?: string;
+  salaryDetails?: string;
+}
+
 export interface Job {
   readonly id: string;
+  approach: Approach;
   title: string;
   description: string;
   organisation: string;
   location: fixedLocations[] | overseasLocations[];
-  grade: string;
-  assignmentType: string;
+  grade: Grade | string;
+  assignmentType: Assignments;
   personalSpec: string;
   applyDetail: string;
+  closingDate: Date;
+  profession: Profession;  
+  recruitmentEmail: string;
+  contactName?: string;
+  contactEmail?: string;
+  contactPhone?: string;
   nationalityRequirement?: string;
   summary?: string;
-  applyUrl?: string;
+  applyUrl?: URL;
   benefits?: string;
-  profession?: string;
-  salary?: string;
-  closingDate?: string;
+  salary?: Salary;
   jobNumbers?: number;
   successProfileDetails?: string;
   diversityStatement?: string;
   disabilityConfident?: string;
+  dcStatus?: DCStatus;
   redeploymentScheme?: string;
   prisonScheme?: string;
   veteranScheme?: string;
-  contacts: boolean;
-  contactName?: string;
   criminalRecordCheck?: string;
   complaintsInfo?: string;
   workingForTheCivilService?: string;
   eligibilityCheck?: string;
-  contactEmail?: string;
-  contactPhone?: string;
-  recruitmentEmail: string;
   attachments?: JobAttachment[];
 }
 
