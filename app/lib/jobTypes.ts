@@ -5,11 +5,14 @@ export interface JobResultItem {
   title: string;
   organisation: string;
   location: fixedLocations[] | overseasLocations[];
-  assignmentType?: Assignments;
-  salary?: Salary;
-  closingDate?: Date | string;
-  profession?: Profession;
-  approach?: Approach;
+  workingPattern: WorkingPattern[];
+  assignmentType: Assignments;
+  salary: Salary;
+  workLocation: WorkLocation[];
+  grade: Grade | string;
+  closingDate: Date;
+  profession: Profession;
+  approach: Approach;
 }
 
 export interface JobSearchResponse {
@@ -34,6 +37,8 @@ export interface Job {
   location: fixedLocations[] | overseasLocations[];
   grade: Grade | string;
   assignmentType: Assignments;
+  workLocation: WorkLocation[];
+  workingPattern: WorkingPattern;
   personalSpec: string;
   applyDetail: string;
   closingDate: Date;
@@ -70,7 +75,7 @@ export interface JobAttachment {
 // aligns with BS7666 standard (adopted by Nova)
 export interface fixedLocations {
   uprn?: string;
-  paoText: string | undefined;
+  paoText?: string;
   saoText?: string;
   streetDescription?: string;
   townName: string;
@@ -98,6 +103,17 @@ export enum Assignments {
   Loan = "Loan",
   Secondment = "Secondment",
   Permanent = "Permanent"
+}
+
+// Maps to Nova data standard working pattern
+export enum WorkingPattern {
+  FullTime = "Full-time",
+  PartTime = "Part-time"
+}
+
+export enum WorkLocation {
+  Home = "Home based",
+  Office = "Office based"
 }
 
 // Nova data standard compliant
@@ -165,7 +181,7 @@ export interface Salary {
 }
 
 export interface Contacts {
-  contactName?: string;
-  contactEmail?: string;
+  contactName: string;
+  contactEmail: string;
   contactPhone?: string;
 }

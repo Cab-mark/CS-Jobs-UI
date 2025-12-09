@@ -88,6 +88,12 @@ export default function JobDetails({ job }: { job: Job }) {
             <dd className="govuk-summary-list__value">{job.jobNumbers}</dd>
           </div>
         )}
+        {job.workingPattern && (
+          <div className="govuk-summary-list__row">
+            <dt className="govuk-summary-list__key">Working pattern</dt>
+            <dd className="govuk-summary-list__value">{job.workingPattern}</dd>
+          </div>
+        )}
         {job.profession && (
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Profession</dt>
