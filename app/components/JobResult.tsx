@@ -84,16 +84,16 @@ export default function JobResult({ jobs }: { jobs: JobResultItem[] }) {
   </p>
 )}
             {/* Closing date */}
-            {job.closingDate && (
+            {job.dateClosing && (
               <p className="govuk-hint govuk-!-margin-bottom-2">
                 Closing date: {
-                  job.closingDate instanceof Date
-                    ? job.closingDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+                  job.dateClosing instanceof Date
+                    ? job.dateClosing.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
                     : (() => {
                         // Try to parse string to Date
-                        const d = new Date(job.closingDate);
+                        const d = new Date(job.dateClosing);
                         return isNaN(d.getTime())
-                          ? job.closingDate
+                          ? job.dateClosing
                           : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
                       })()
                 }

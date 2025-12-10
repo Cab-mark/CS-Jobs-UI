@@ -30,7 +30,8 @@ export const jobsData: Job[] = [
   title: 'Policy Advisor',
   profession: Profession.Policy,
   salary: { minimum: 45000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2025-12-20')
+  datePosted: new Date('2025-10-01'),
+  dateClosing: new Date('2025-12-20')
 },
 { approach: Approach.AcrossGovernment,
   externalId: 'S-987',
@@ -93,9 +94,10 @@ export const jobsData: Job[] = [
   organisation: 'Department for Transport',
   id: 'vx-438276', title: 'Senior Policy Advisors Rail Licensing and Accountabilities',
   salary: { minimum: 44241, maximum: 48581, currency: 'GBP', currencySymbol: '£', salaryDetails: '£44,241 (National Minimum)\n£48,581 (London Minimum)' },
+  datePosted: new Date('2025-09-15'),
   complaintsInfo: 'If you feel your application has not been treated in accordance with the Recruitment Principles and you wish to make a complaint, in the first instance, you should contact Government Recruitment Services via email: dftrecruitment.grs@cabinetoffice.gov.uk \n\nIf you are not satisfied with the response you receive from the Department, you can contact the Civil Service Commission: Visit the Civil Service Commission website Here',
   criminalRecordCheck: 'Successful candidates must undergo a criminal record check.',
-  closingDate: new Date('2025-12-07'),
+  dateClosing: new Date('2025-12-07'),
   benefits: 'Alongside your salary of £44,241, Department for Transport contributes £12,816 towards you being a member of the Civil Service Defined Benefit Pension scheme. Find out what benefits a Civil Service Pension provides.\n\nBeing part of our brilliant Civil Service means you will have access to a wide range of fantastic benefits:\n\n* Employer pension contribution of 28.97% of your salary. Read more about Civil Service Pensions here\n* 25 days annual leave, increasing by 1 day each year of service (up to a maximum of 30 days annual leave).\n* 8 Bank Holidays plus an additional Privilege Day to mark the King’s birthday.\n* Access to the staff discount portal.\n* Excellent career development opportunities and the potential to undertake professional qualifications relevant to your role paid for by the department, such as CIPD, Prince2, apprenticeships, etc.\n* Joining a diverse and inclusive workforce with a range of staff communities to support all our colleagues.\n* 24-hour Employee Assistance Programme providing free confidential help and advice for staff.\n* Flexible working options where we encourage a great work-life balance.\n\nFind out more about the benefits of working at DfT and its agencies (opens in a new window).',
   attachments: [
     {
@@ -130,7 +132,8 @@ export const jobsData: Job[] = [
   organisation: 'College of Policing', 
   id: '9488', 
   title: 'Police Service - Volunteer Curator', 
-  closingDate: new Date('2025-12-20') 
+  datePosted: new Date('2025-09-15'),
+  dateClosing: new Date('2025-12-20') 
 },
 { approach: Approach.External, 
   externalId: 'M-0091',
@@ -156,7 +159,8 @@ export const jobsData: Job[] = [
   organisation: 'Home Office', id: '9487', 
   title: 'Project Manager', 
     salary: { minimum: 39000, maximum: 46200, currency: 'GBP', currencySymbol: '£' }, 
-  closingDate: new Date('2025-12-20') 
+  datePosted: new Date('2025-09-15'),
+  dateClosing: new Date('2025-12-20') 
 },
 { approach: Approach.External, 
   personalSpec: 'Some personal specification text',
@@ -181,7 +185,8 @@ export const jobsData: Job[] = [
   organisation: 'HM Revenue and Customs', 
   externalId: 'O-2024',
   id: '9489', title: 'Dentist', 
-  closingDate: new Date('2026-01-05'), 
+  datePosted: new Date('2025-09-15'),
+  dateClosing: new Date('2026-01-05'), 
     salary: { minimum: 99000, currency: 'GBP', currencySymbol: '£' } 
 },
 { approach: Approach.External,
@@ -209,7 +214,8 @@ export const jobsData: Job[] = [
   id: 'es-emb-001',
   title: 'Embassy Operations Manager',
     salary: { minimum: 60000, currency: 'EUR', currencySymbol: '€' },
-  closingDate: new Date('2026-01-31'),
+  datePosted: new Date('2025-10-15'),
+  dateClosing: new Date('2026-01-31'),
   applyDetail: 'Apply via the FCDO careers portal. Interviews will be held virtually.',
   summary: 'An exciting opportunity to manage embassy operations and support UK interests in Spain.',
   benefits: 'Competitive salary, relocation support, and diplomatic status.',
@@ -248,7 +254,8 @@ export const jobsData: Job[] = [
   id: 'hmrc-100',
   title: 'Tax Policy Analyst',
     salary: { minimum: 52000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2026-01-10')
+  datePosted: new Date('2025-09-20'),
+  dateClosing: new Date('2026-01-10')
 },
 { approach: Approach.External,
   externalId: 'M-9874',
@@ -276,7 +283,8 @@ export const jobsData: Job[] = [
   id: 'cab-70',
   title: 'Digital Transformation Lead',
     salary: { minimum: 60000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2026-01-15'),
+  datePosted: new Date('2025-09-20'),
+  dateClosing: new Date('2026-01-15'),
   applyDetail: ""
 },
 { approach: Approach.External,
@@ -303,7 +311,8 @@ export const jobsData: Job[] = [
   id: 'mod-001',
   title: 'Communications Officer',
     salary: { minimum: 48000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2026-01-20')
+  datePosted: new Date('2025-09-20'),
+  dateClosing: new Date('2026-01-20')
 },
 { approach: Approach.External,
   externalId: 'S-8447',
@@ -331,7 +340,8 @@ export const jobsData: Job[] = [
   id: 'ho-002',
   title: 'Security Project Manager',
     salary: { minimum: 55000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2026-01-25'),
+  datePosted: new Date('2025-09-20'),
+  dateClosing: new Date('2026-01-25'),
   applyDetail: ""
 },
 { approach: Approach.External,
@@ -357,7 +367,8 @@ export const jobsData: Job[] = [
   id: 'fco-paris',
   title: 'Diplomatic Support Officer',
     salary: { minimum: 58000, currency: 'EUR', currencySymbol: '€' },
-  closingDate: new Date('2026-01-30'),
+  datePosted: new Date('2025-09-25'),
+  dateClosing: new Date('2026-01-30'),
   applyDetail: ""
 },
 { approach: Approach.External,
@@ -384,7 +395,8 @@ export const jobsData: Job[] = [
   id: 'moj-102',
   title: 'Legal Advisor',
     salary: { minimum: 58000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2026-02-05')
+  datePosted: new Date('2025-09-25'),
+  dateClosing: new Date('2026-02-05')
 },
 { approach: Approach.External,
   externalId: 'O-4883',
@@ -412,7 +424,8 @@ export const jobsData: Job[] = [
   id: 'dfe-001',
   title: 'Education Policy Advisor',
     salary: { minimum: 50000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2026-02-10'),
+  datePosted: new Date('2025-10-01'),
+  dateClosing: new Date('2026-02-10'),
   applyDetail: ""
 },
 { approach: Approach.External,
@@ -439,7 +452,8 @@ export const jobsData: Job[] = [
   id: 'nhs-001',
   title: 'Hospital Operations Manager',
     salary: { minimum: 62000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2026-02-15')
+  datePosted: new Date('2025-10-01'),
+  dateClosing: new Date('2026-02-15')
 },
 { approach: Approach.External,
   personalSpec: 'Experience in transport planning.',
@@ -467,7 +481,8 @@ export const jobsData: Job[] = [
   externalId: 'U-7890',
   title: 'Transport Planner',
     salary: { minimum: 54000, currency: 'GBP', currencySymbol: '£' },
-  closingDate: new Date('2026-02-20'),
+  datePosted: new Date('2025-10-05'),
+  dateClosing: new Date('2026-02-20'),
   applyDetail: ""
 },
 {
@@ -493,7 +508,8 @@ export const jobsData: Job[] = [
   id: 'fco-kenya',
   title: 'Development Project Officer',
     salary: { minimum: 3000000, currency: 'KES'},
-  closingDate: new Date('2026-02-28'),
+  datePosted: new Date('2025-10-10'),
+  dateClosing: new Date('2026-02-28'),
   applyDetail: "",
   approach: Approach.Internal
 }

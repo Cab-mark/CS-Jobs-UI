@@ -10,7 +10,7 @@ export interface JobResultItem {
   assignmentType: Assignments;
   salary: Salary;
   grade: Grade | string;
-  closingDate: Date;
+  dateClosing: Date;
   profession: Profession;
   approach: Approach;
 }
@@ -41,7 +41,8 @@ export interface Job {
   workingPattern: WorkingPattern[];
   personalSpec: string;
   applyDetail: string;
-  closingDate: Date;
+  datePosted: Date;
+  dateClosing: Date;
   profession: Profession;  
   recruitmentEmail: string;
   contacts?: Contacts[];

@@ -100,17 +100,17 @@ export default function JobDetails({ job }: { job: Job }) {
             <dd className="govuk-summary-list__value">{job.profession}</dd>
           </div>
         )}
-        {job.closingDate && (
+        {job.dateClosing && (
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Closing date</dt>
             <dd className="govuk-summary-list__value">
               {
-                job.closingDate instanceof Date
-                  ? job.closingDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+                job.dateClosing instanceof Date
+                  ? job.dateClosing.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
                   : (() => {
-                      const d = new Date(job.closingDate);
+                      const d = new Date(job.dateClosing);
                       return isNaN(d.getTime())
-                        ? job.closingDate
+                        ? job.dateClosing
                         : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
                     })()
               }
