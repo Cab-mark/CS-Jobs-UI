@@ -6,9 +6,9 @@ export interface JobResultItem {
   organisation: string;
   location: fixedLocations[] | overseasLocations[];
   workingPattern: WorkingPattern[];
+  workLocation: WorkLocation[];
   assignmentType: Assignments;
   salary: Salary;
-  workLocation: WorkLocation[];
   grade: Grade | string;
   closingDate: Date;
   profession: Profession;
@@ -38,7 +38,7 @@ export interface Job {
   grade: Grade | string;
   assignmentType: Assignments;
   workLocation: WorkLocation[];
-  workingPattern: WorkingPattern;
+  workingPattern: WorkingPattern[];
   personalSpec: string;
   applyDetail: string;
   closingDate: Date;
